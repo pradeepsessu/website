@@ -353,9 +353,13 @@ span{
 
 .contact .copyright {
     margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 16px;
     color: var(--text-color);
+}
+.contact .heading{
+    margin-top: 20px;
 }
 
 /* scoll bar */
