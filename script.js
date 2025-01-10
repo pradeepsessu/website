@@ -2,14 +2,23 @@ let menu = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
 menu.onclick = () => {
-    menu.classList.toggle('bx-x');
+    menu.classList.toggle('bx bx-menu');
     navbar.classList.toggle('active');
 }
 
 window.onscroll = () => {
-    menu.classList.remove('bx-x');
+    menu.classList.remove('bx bx-menu');
     navbar.classList.remove('active');
 }
+
+// Typing text code //
+const typed = new Typed('.multiple-text', {
+    strings: ['Physical Fitness', 'Weight gain', 'Fat loss', 'weight lifting'],
+    typeSpeed: 60,
+    backSpeed: 60,
+    backDelay: 1000,
+    loop: true,
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     const socialSection = document.querySelector(".social");
@@ -43,19 +52,19 @@ document.addEventListener("DOMContentLoaded", () => {
     //  registeration forms
     const registerButtons = document.querySelectorAll(".plans .box a");
     registerButtons.forEach((button) => {
-        button.href = "https://forms.gle/o3s2WxWasvXPQXww7";
+        button.href = "https://forms.gle/EeEEZWEEiXkLRF2C6";
         button.target = "_blank";
     });
 
     const joinUsButton = document.querySelector(".nav-btn");
     if (joinUsButton) {
-        joinUsButton.href = "https://forms.gle/o3s2WxWasvXPQXww7";
+        joinUsButton.href = "https://forms.gle/EeEEZWEEiXkLRF2C6";
         joinUsButton.target = "_blank";
     }
 
     const homeJoinButton = document.querySelector(".home-content .btn");
     if (homeJoinButton) {
-        homeJoinButton.href = "https://forms.gle/o3s2WxWasvXPQXww7";
+        homeJoinButton.href = "https://forms.gle/EeEEZWEEiXkLRF2C6";
         homeJoinButton.target = "_blank";
     }
 });
