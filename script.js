@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     socialSection.appendChild(instagramLink);
 
     const youtubeLink = document.createElement("a");
-    youtubeLink.href = "https://www.youtube.com/@harpyvlogs";
+    youtubeLink.href = "https://www.youtube.com/@eraofshekar";
     youtubeLink.target = "_blank";
     youtubeLink.innerHTML = "<i class='bx bxl-youtube'></i>";
      socialSection.appendChild(youtubeLink);
