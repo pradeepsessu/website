@@ -6,10 +6,20 @@ menu.onclick = () => {
     navbar.classList.toggle('active');
 }
 
+// window.onscroll = () => {
+//     menu.classList.remove('bx bx-menu');
+//     navbar.classList.remove('active');
+// }
+
 window.onscroll = () => {
-    menu.classList.remove('bx bx-menu');
-    navbar.classList.remove('active');
-}
+    const header = document.querySelector('header');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+};
+
+menu.onclick = () => {
+    menu.classList.toggle('active');
+    navbar.classList.toggle('active');
+};
 
 // Typing text code //
 const typed = new Typed('.multiple-text', {
@@ -28,16 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("joinUsBtn").addEventListener("click", function(event) {
         event.preventDefault(); 
-        window.open("https://www.instagram.com/harpyfitco", "_blank"); 
+        window.open("https://www.instagram.com/era_of_shekar/", "_blank"); 
     });
 
     document.getElementById("joinUsBtn2").addEventListener("click", function(event) {
         event.preventDefault(); 
-        window.open("https://www.instagram.com/harpyfitco", "_blank"); 
+        window.open("https://www.instagram.com/era_of_shekar/", "_blank"); 
     });
 
      const instagramLink = document.createElement("a");
-    instagramLink.href = "https://www.instagram.com/harpyfitco";
+    instagramLink.href = "https://www.instagram.com/era_of_shekar/";
     instagramLink.target = "_blank";
     instagramLink.innerHTML = "<i class='bx bxl-instagram'></i>";
     socialSection.appendChild(instagramLink);
@@ -68,3 +78,44 @@ document.addEventListener("DOMContentLoaded", () => {
         homeJoinButton.target = "_blank";
     }
 });
+
+
+ function initCarousel(carouselId) {
+    const track = document.querySelector(`#${carouselId} .carousel-track`);
+    let currentIndex = 0;
+    const totalImages = track.children.length;
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalImages;
+      track.style.transform = `translateX(-${currentIndex * 50}%)`;
+    }, 1600); // 1s display + 0.6s transition = 1.6s per image
+  }
+  initCarousel('carousel1');
+  initCarousel('carousel2');
+  initCarousel('carousel3');
+
+
+
+
+        (function() {
+            var qs,js,q,s,d=document,
+            gi=d.getElementById,
+            ce=d.createElement,
+            gt=d.getElementsByTagName,
+            id="typef_orm_share",
+            b="https://forms.gle/EeEEZWEEiXkLRF2C6";
+            if(!gi.call(d,id)) {
+                js=ce.call(d,"script");
+                js.id=id;
+                js.src=b+"embed.js";
+                q=gt.call(d,"script")[0];
+                q.parentNode.insertBefore(js,q)
+            }
+        })()
+    
+
+
+
+
+
+
+
