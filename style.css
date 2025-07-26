@@ -26,7 +26,7 @@ html, body {
   --bg-color: #000000;
   --snd-bg-color: #111;
   --text-color: #fff;
-  --main-color: #dfbb09;
+  --main-color: #cfff13;
   --slider-height: 400px;
   --slider-gap: 20px;
 }
@@ -513,55 +513,10 @@ span{
 
 
 
-/* About section code here */
-
-/* .about{
-    display: flex;
-    justify-content: center;
-    align-items: centre;
-}
-
-.about{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-.about-img img {
-    width: 50vw;
-   
-    border-radius: 1rem;
-    transition: 0.5s ease;
-
-}
-
-.about-img img:hover{
-    transform: scale(1.01);
-    
-}
-
-.about-content{
-    padding: 0 3rem;
-}
-
-.about-content h2{
-    text-align: left;
-    line-height: 1.2;
-}
-
-.about-content p{
-    padding-top:15px;
-    font-size: 1.6rem;
-    margin: 2rem 0 2rem;
-} */
-
-
-
-
+/* about section */
 .about {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 1.5rem; /* Space between sections */
     padding: 3rem 2rem; /* Padding for overall section */
@@ -571,7 +526,8 @@ span{
 .about-img img {
     width: 100; /* Adjust image width for balance */
     min-width: 180px; /* Ensure images are visible on smaller devices */
-    max-width: 483px;
+    max-width: 543px;
+    margin-right: 180px;
     border-radius: 1rem;
     transition: transform 0.5s ease;
 }
@@ -595,96 +551,176 @@ span{
 }
 
 .about-content p {
-    font-size: 1.6rem; /* Consistent font size */
+    margin-right: 50px;
+    font-size: 1.8rem; /* Consistent font size */
     line-height: 1.3; /* Improve readability */
     margin: 1.5rem 0; /* Uniform spacing between paragraphs */
     color: var(--text-color); /* Use text color for consistency */
 }
 
 
-/* Testimonials section code */
-.carousel-section {
-  margin: 0;
-  background: var(--snd-bg-color);
+
+
+ /* Reset and base styles */
+    .slider-section {
+      margin: 30px 30px;
+      /* background-color: #111; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* height: 100vh; */
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      padding: 0;
+    object-fit: cover;
+
+    }
+    .slider-wrapper {
+      width: 100vw;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      /* background-color: #222; */
+      position: relative;
+      height: 300px;
+      /* prevent text selection */
+      user-select: none;
+      
+    }
+    .slider {
+      display: flex;
+      flex-wrap: nowrap;
+      width: max-content;
+      animation: slide-left 15s linear infinite;
+      padding: 0 10px;
+      gap: 10px;
+
+
+    }
+
+    .slider:hover {
+      animation-play-state: paused; /* Pause on hover for usability */
+    }
+    .slider img {
+      width: 200px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+      background-color: #333;
+      flex-shrink: 0;
+    }
+    /* The keyframe to move from right to left fully */
+    @keyframes slide-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-80%));
+    
+      }
+    }
+
+    @media (max-width:991px){
+    .slider-wrapper{
+        height: 30vh;
+        margin-top: 30px;
+    }
+    .slider img{
+        height: auto;
+    }
+    }
+
+
+
+/* //special in fatloss code here */
+
+.fatloss-blog {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  height: calc(var(--slider-height) + 40px); /* Dynamic height */
-  padding: 20px 0; /* Add top and bottom spacing */
+  /* gap: 40px; */
+  padding: 10px 10px;
+  width: 100vw;
+  height:10vh;
+  background-color:var(--bg-color);
+  color: #fff;
+  flex-wrap: wrap;
 }
 
-/* Slider box */
-.slider {
-  position: relative;
-  width: 90vw;
-  max-width: 1200px;
-  height: var(--slider-height);
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
-  background: linear-gradient(90deg, #222, #111);
-}
+.blog-image img {
+  width: 100%;
+  max-width: 500px;
 
-/* Image track */
-.slider-track {
-  display: flex;
-  align-items: center;
-  gap: var(--slider-gap);
-  animation: scroll-left 6s linear infinite;
-}
-
-/* Each image */
-.slider-track img {
-  height: var(--slider-height);
-  width: auto;
-  border-radius: 8px;
   object-fit: cover;
-  user-select: none;
-  pointer-events: none;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
-  transition: transform 0.3s ease;
 }
 
-.slider-track img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 4px 10px rgba(255, 255, 255, 0.6));
+.blog-content {
+  max-width: 600px;
 }
 
-/* Scroll animation */
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-50% - var(--slider-gap)/2));
-  }
+.blog-content h2 {
+  font-size: 4.8rem;
+  margin-bottom: 16px;
 }
 
-/* Responsive: tablets */
+.blog-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+
+
+
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  :root {
-    --slider-height: 150px;
-    --slider-gap: 15px;
+  .fatloss-blog {
+    flex-direction: col;
+
+    /* text-align: center; */
+  }
+.blog-image img{
+    width: 60%;
+    margin-right: 150px;
+}
+  .blog-content h2 {
+    font-size: 26px;
+    margin-left: 170px;
+    margin-top: -450px;
   }
 
-  .carousel-section {
-    height: calc(var(--slider-height) + 40px);
+  .blog-content p {
+    font-size: 10px;
+    margin-left: 170px;
+    margin-top: -12px;
   }
+
+  
 }
 
-/* Responsive: mobiles */
-@media (max-width: 480px) {
-  :root {
-    --slider-height: 90px;
-    --slider-gap: 10px;
-  }
 
-  .carousel-section {
-    height: calc(var(--slider-height) + 90px);
-  }
+
+
+/* what makes differ section belongs here */
+
+.diff-heading{
+     align-items: center;
+     text-align: center;
+    font-size: 50px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
 }
 
-
+.diff-para{
+    text-align: center;
+     font-size: 1.8rem; /* Consistent font size */
+    line-height: 1.3; /* Improve readability */
+    margin: 1.5rem 0; /* Uniform spacing between paragraphs */
+}
 
 
 
@@ -740,18 +776,11 @@ span{
 .contact .heading{
     margin-top: 20px;
 }
+.contact p{
+    font-size: 200%;
+    text-align: center;
+}
 
-
-/* scoll bar */
-
-/* /* ::-webkit-scrollbar {
-    /* width: 15px; 
-} */
-
-/* ::-webkit-scrollbar-thumb { */
-    /* background: var(--main-color); */
-    /* width: 100%; */
- /* */
 
 
 
@@ -809,29 +838,41 @@ span{
 
 }
 
+
+/* Join us responsive code */
+
 @media (max-width: 786px){
     .home{
-        flex-direction: column;
+        flex-direction: row;
     }
     .home-content h3{
-        font-size: 4.5rem;
-        margin-top: 1.5rem;
+        font-size: 2.5rem;
+        margin-top:1.5rem;
     }
     .home-content h1{
-        font-size: 5rem;
-        margin-top: 1.5rem;
+        font-size: 2.6rem;
+        margin-top: 0.5rem;
+        margin-bottom: -1.9rem;
+    }
+    .home .multiple-text{
+        font-size: 2.05rem;
+        margin-top: 0.01rem;
     }
     .home-img img{
-        width: 70vw;
+        width: 20px;
         margin-top: 4rem;
+        margin-right: -100px;
 
     }
 
+}
+/* About section responsive */
 
 @media (max-width: 768px) {
     .about-container {
-        flex-direction: row; /* Stack items vertically on smaller screens */
+        flex-direction: column; /* Stack items vertically on smaller screens */
         align-items: center;
+        text-align: center;
     }
 
     .about-img img {
@@ -850,11 +891,11 @@ span{
     }
 
     .about-content p {
-        font-size: 1.4rem; /* Adjust text size for smaller screens */
+        font-size: 1rem; /* Adjust text size for smaller screens */
     }
 }
 
-}
+
 
 @media (max-width:617px){
     .home-img img{
@@ -876,32 +917,5 @@ span{
 
 
 
-/* carousel-track */
 
 
-
-
-/* BEfore plans section */
-
-    @media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-    }
-
-    .text-content h1 {
-        font-size: 28px;
-        justify-content: center;
-    }
-
-    .cta-button{
-        border-radius: 40px;
-        justify-content: center;
-        height: 200px;
-        width: 400px;
-        margin-bottom: 50px;
-}
-
-.img{
-size: 20px;
-}
-}
